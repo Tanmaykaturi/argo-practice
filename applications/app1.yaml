@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Tanmaykaturi/argo-practice # Replace with your Git repo URL
+    repoURL: https://github.com/Tanmaykaturi/argo-practice.git # Replace with your Git repo URL
     targetRevision: HEAD # Replace with branch/tag/commit SHA as needed
     path: applications # Path to the Kubernetes manifests in the repo
   destination:
