@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: app1
-  namespace: argocd # Ensure this matches your ArgoCD installation namespace
+  namespace: default # Ensure this matches your ArgoCD installation namespace
 spec:
   project: default
   source:
