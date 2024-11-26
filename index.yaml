@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  argo-practice-helm:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-26T13:27:40.9243498+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 26ef4120afb2155c5d820b1eef82b4baed1e35a18b4c3a0812ffb044c290941a
+    name: argo-practice-helm
+    type: application
+    urls:
+    - https://github.com/Tanmaykaturi/argo-practice/argo-practice-helm-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-11-26T13:27:40.9225553+05:30"
