@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Tanmaykaturi/argo-practice.git # Replace with your Git repo URL
     targetRevision: HEAD # Replace with branch/tag/commit SHA as needed
-    path: applications # Path to the Kubernetes manifests in the repo
+    path: service #Path to the Kubernetes manifests in the repo
   destination:
     server: https://kubernetes.default.svc # Defaults to the same cluster
     namespace: default # Namespace where the app should be deployed
