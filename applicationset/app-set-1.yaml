@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/Tanmaykaturi/argo-practice
         revision: 'main'
         directories:
-          - path: service
+          - path: applicationset
   template:
     metadata:
       name: '{{path.basename}}-app'
