@@ -7,13 +7,13 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/Tanmaykaturi/argo-practice
-        revision: 'main'
+        revision: main
         directories:
           - path: service
   template:
     metadata:
       name: '{{path.basename}}-app'
-      namespace: argocd
+      namespace: default
     spec:
       project: default
       source:
