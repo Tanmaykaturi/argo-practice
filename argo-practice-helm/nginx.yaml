@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-helm-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Tanmaykaturi/argo-practice  # URL of the Helm repository
+    chart: nginx  # The Helm chart you want to deploy (e.g., 'nginx')
+    targetRevision: 9.3.4  # Optional: specify the chart version (e.g., '9.3.4') or use 'latest'
+    helm:
+      parameters:  # Optional: Override default values in the chart
+        - name: replicaCount
+          value: "2"
+        - name: service.type
+          value: "LoadBalancer"
+  destination:
+    server: https://kubernetes.default.svc  # The Kubernetes cluster to deploy to
+    namespace: default  # The namespace to deploy the application
+  syncPolicy:
+    automated:
+      prune: true  # Automatically delete resources no longer in Git/Helm repo
+      selfHeal: true  # Automatically apply changes if resources drift
