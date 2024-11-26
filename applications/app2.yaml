@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Tanmaykaturi/argo-practice  # Replace with your Git repository URL
     targetRevision: HEAD  # Replace with the desired branch/tag/commit
-    path: applications/app2 # Path to the folder containing Deployment and Service YAML files
+    path: applications # Path to the folder containing Deployment and Service YAML files
   destination:
     server: https://kubernetes.default.svc  # Target cluster (same cluster if ArgoCD is in the same one)
     namespace: default  # The namespace to deploy to
