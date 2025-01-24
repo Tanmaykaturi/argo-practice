@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app
+  name: tamy-app
   labels:
-    app: my-app
+    app: tamy-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: tamy-app
   template:
     metadata:
       labels:
-        app: my-app
+        app: tamy-app
     spec:
       containers:
-        - name: my-app
+        - name: tamy-app
           image: image: quay.io/podman/stable:latest
           ports:
             - containerPort: 8080
