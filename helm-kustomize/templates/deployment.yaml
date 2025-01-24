@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: quay.io/your-username/your-image:tag
+          image: image: quay.io/podman/stable:latest
           ports:
             - containerPort: 8080
