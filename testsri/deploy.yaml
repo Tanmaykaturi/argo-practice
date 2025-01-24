@@ -1,18 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: default
-  namespace: argocd
+  name: nginx-deployment
+  labels:
+    app: nginx
 spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/Tanmaykaturi/argo-practice'
-    targetRevision: HEAD
-    path: 'testsri'  # Path to your Kubernetes manifests in the repo
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: default  # Namespace to deploy your application
-  syncPolicy:
-    automated:
-      prune: true  # Automatically remove resources no longer defined in the Git repo
-      selfHeal: true  # Automatically sync the app if there's drift
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
