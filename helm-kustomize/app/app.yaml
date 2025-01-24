@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-helm-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Tanmaykaturi/argo-practice
+    targetRevision: HEAD # Or specific branch/tag (e.g., "main")
+    path: helm-kustomize/charts           # Path to the Helm chart in the repo
+    helm:
+      valueFiles:
+        - values.yaml    # Use the `values.yaml` in the Helm chart
+  destination:
+    server: https://kubernetes.default.svc # Cluster URL
+    namespace: default                # Target namespace
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true  # Automatically create the namespace if it doesn't exist
+    automated:                # Optional: Enable auto-sync
+      prune: true             # Prune resources no longer in the chart
+      selfHeal: true          # Automatically fix drifted resources
