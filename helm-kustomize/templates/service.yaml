@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: tamy-app-service
+  name: my-app-service
 spec:
   selector:
-    app: tamy-app
+    app: my-app
   ports:
     - protocol: TCP
       port: 80
