@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/Tanmaykaturi/argo-practice'
     targetRevision: HEAD
-    path: 'k8s-manifests'  # Path to your Kubernetes manifests in the repo
+    path: 'testsri'  # Path to your Kubernetes manifests in the repo
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default  # Namespace to deploy your application
