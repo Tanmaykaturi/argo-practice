@@ -1,0 +1,5 @@
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+  - patch-argocd-cm.yaml
