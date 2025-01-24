@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-org/your-helm-chart-repo.git  # Git URL where the Helm chart is hosted
+    targetRevision: HEAD  # The branch or commit you want to track (e.g., "main" or "v1.0.0")
+    path: charts/your-chart-folder  # Path inside the repo to the Helm chart
+    helm:
+      valueFiles:
+        - values.yaml  # Optional: If you have custom values for Helm
+      parameters:
+        - name: replicaCount
+          value: "2"  # Example of overriding Helm values
+        - name: image.tag
+          value: "latest"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  # The target namespace for this deployment
+  syncPolicy:
+    automated:
+      prune: true  # Automatically remove resources that are no longer in the Git repo
+      selfHeal: true  # Automatically sync when changes are detected
+    syncOptions:
+      - CreateNamespace=true  # Automatically create the namespace if it doesn’t exist
