@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: helm-app
+  name: my-app
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/your-helm-chart-repo.git  # Git URL where the Helm chart is hosted
+    repoURL: https://github.com/Tanmaykaturi/argo-practice # Git URL where the Helm chart is hosted
     targetRevision: HEAD  # The branch or commit you want to track (e.g., "main" or "v1.0.0")
-    path: charts/your-chart-folder  # Path inside the repo to the Helm chart
+    path: helm-kustomize/charts  # Path inside the repo to the Helm chart
     helm:
       valueFiles:
         - values.yaml  # Optional: If you have custom values for Helm
