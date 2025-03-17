@@ -8,15 +8,15 @@ spec:
     - list:
         elements:
           - name: list-application-set-app1
-            repoURL: https://github.com/Rajesh-Sangepu/argocd-app-bitthal.git          #pod
+            repoURL: https://github.com/Tanmaykaturi/argo-practice.git         #pod
             targetRevision: HEAD
-            path: application-set/list-data/app1
+            path: applicationset/list-data/app1
           - name: list-application-set-app2
-            repoURL: https://github.com/Rajesh-Sangepu/argocd-app-bitthal.git           #service
+            repoURL: https://github.com/Tanmaykaturi/argo-practice.git          #service
             targetRevision: HEAD
             path: application-set/list-data/app2
           - name: list-application-set-app3
-            repoURL: https://github.com/Rajesh-Sangepu/argocd-app-bitthal.git           #service
+            repoURL: https://github.com/Tanmaykaturi/argo-practice.git          #service
             targetRevision: HEAD
             path: application-set/list-data/app3
   template:
